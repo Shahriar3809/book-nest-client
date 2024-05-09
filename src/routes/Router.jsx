@@ -7,6 +7,7 @@ import Register from "../Pages/Register";
 import AddBook from "../Pages/AddBook";
 import AllBooks from "../Pages/AllBooks";
 import BorrowedBooks from "../Pages/BorrowedBooks";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -27,17 +28,29 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: '/add-book',
-        element: <AddBook></AddBook>
+        path: "/add-book",
+        element: (
+          <PrivateRoutes>
+            <AddBook></AddBook>
+          </PrivateRoutes>
+        ),
       },
       {
-        path: '/all-books',
-        element: <AllBooks></AllBooks>
+        path: "/all-books",
+        element: (
+          <PrivateRoutes>
+            <AllBooks></AllBooks>
+          </PrivateRoutes>
+        ),
       },
       {
-        path: '/borrowed-books',
-        element: <BorrowedBooks></BorrowedBooks>
-      }
+        path: "/borrowed-books",
+        element: (
+          <PrivateRoutes>
+            <BorrowedBooks></BorrowedBooks>
+          </PrivateRoutes>
+        ),
+      },
     ],
   },
 ]);
