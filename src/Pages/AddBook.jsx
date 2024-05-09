@@ -1,8 +1,12 @@
+import axios from "axios";
+import { toast } from "react-toastify";
+
 const AddBook = () => {
+
   const handleAddBook = (event) => {
     event.preventDefault();
     const form = event.target;
-    const bookName = form.name.value;
+    const bookName = form.book_name.value;
     const photoUrl = form.photo.value;
     const rating = form.rating.value;
     const author = form.author.value;
@@ -11,19 +15,16 @@ const AddBook = () => {
     const about = form.about.value;
     const category_name = form.category_name.value;
     const newBook = {bookName, photoUrl, rating, author, description, quantity, about, category_name}
-    console.log(newBook)
-  };
+    // console.log(newBook)
+    
 
-  //     {
-  //   "bookImage": "https://example.com/book-image.jpg",
-  //   "bookName": "The Great Gatsby",
-  //   "bookQuantity": 100,
-  //   "authorName": "F. Scott Fitzgerald",
-  //   "category": "Novel",
-  //   "description": "The Great Gatsby is a novel written by American author F. Scott Fitzgerald. It follows a cast of characters living in the fictional town of West Egg on prosperous Long Island in the summer of 1922.",
-  //   "rating": 4,
-  //   "contents": "The novel explores themes of decadence, idealism, resistance to change, and social upheaval."
-  // }
+    axios.post("http://localhost:5000/addBook", newBook)
+    .then(res=> {
+      if(res.data.insertedId) {
+        toast.success("Book Added Successfully");
+      }
+    })
+  };
 
   return (
     <div className="bg-gray-300 rounded-lg mt-5">
@@ -102,16 +103,6 @@ const AddBook = () => {
               />
             </div>
             <label className="label">
-              <span className="label-text text-black">About The Book</span>
-            </label>
-            <input
-              type="text"
-              name="about"
-              placeholder="About"
-              className="p-5 w-full rounded-md"
-              required
-            />
-            <label className="label">
               <span className="label-text text-black">Category</span>
             </label>
 
@@ -129,6 +120,18 @@ const AddBook = () => {
               <option>Sci-Fi</option>
               <option>Travel</option>
             </select>
+
+
+            <label className="label">
+              <span className="label-text text-black">About The Book</span>
+            </label>
+            <input
+              type="text"
+              name="about"
+              placeholder="About"
+              className="p-5 w-full rounded-md"
+              required
+            />
           </div>
         </div>
 
@@ -138,7 +141,6 @@ const AddBook = () => {
           value="Add This Book"
         />
       </form>
-      
     </div>
   );
 };

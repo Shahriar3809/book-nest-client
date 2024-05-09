@@ -88,7 +88,7 @@ const Navbar = () => {
           </ul>
         </div>
         <img src="https://i.ibb.co/4Z6hbhW/public-library.png" alt="" className="w-[40px]" />
-        <a className="btn btn-ghost text-xl">Dream Library</a>
+        <Link to='/' className=" ml-3 text-2xl font-bold">Dream Library</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
