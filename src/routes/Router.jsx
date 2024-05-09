@@ -9,6 +9,7 @@ import AllBooks from "../Pages/AllBooks";
 import BorrowedBooks from "../Pages/BorrowedBooks";
 import PrivateRoutes from "./PrivateRoutes";
 import Details from "../Pages/Details";
+import CategoryPage from "../Pages/CategoryPage";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,11 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/details/${params.id}`),
+      },
+      {
+        path: "/category/:name",
+        element: <CategoryPage></CategoryPage>,
+        loader: ({ params }) => fetch(`http://localhost:5000/category/${params.name}`),
       },
     ],
   },

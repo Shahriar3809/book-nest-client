@@ -6,7 +6,7 @@ import BookCard from "../components/BookCard";
 const BorrowedBooks = () => {
 
     const {user} = useContext(AuthContext);
-    const [borrowedData, setBorrowedData] = useState();
+    const [borrowedData, setBorrowedData] = useState(null);
     console.log(borrowedData)
     useEffect(()=> {
         axios.get(`http://localhost:5000/borrowedBooks?email=${user.email}`)

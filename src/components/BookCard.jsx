@@ -16,9 +16,9 @@ const BookCard = ({book}) => {
       category_name,
     } = book;
     return (
-      <div className="card card-compact bg-base-100 shadow-xl">
+      <div className="card border card-compact bg-base-100 shadow-xl">
         <figure>
-          <img className="h-[250px]" src={photoUrl} alt="photo" />
+          <img className="h-[250px] w-full" src={photoUrl} alt="photo" />
         </figure>
         <div className="card-body">
           <h2 className="card-title font-bold text-2xl">{bookName}</h2>
