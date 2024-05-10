@@ -3,13 +3,15 @@ import { FaRegStar } from "react-icons/fa";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
+// import { toast } from "react-toastify";
+// import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 
 
 const Details = () => {
     const {user} = useContext(AuthContext)
     const data = useLoaderData();
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const {
       bookName,
       photoUrl,
@@ -23,22 +25,21 @@ const Details = () => {
     const {email} = user;
 
     const handleBorrowed = () => {
-        const borrowedBook = { bookName,
-      photoUrl,
-      rating,
-      author,
-      quantity,
-      description,
-      category_name, email }
+        const borrowedBook = { ...data, email }
         console.log(borrowedBook)
 
         axios.post("http://localhost:5000/borrowed", borrowedBook)
         .then(res=> {
             if(res.data.insertedId) {
                 toast.success('Successfully Borrowed')
-                navigate('/borrowed-books')
+                // navigate('/borrowed-books')
             }
+            else(
+              toast.error('Already Borrowed')
+            )
+            
         })
+
     }
 
 
