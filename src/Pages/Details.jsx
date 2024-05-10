@@ -97,7 +97,7 @@ const Details = () => {
             </p>
           </div>
           <div>
-            <button onClick={handleBorrowed} className="btn btn-primary">Borrow</button>
+            <button disabled={quantity === 0 ? true: false} onClick={handleBorrowed} className="btn btn-primary ">Borrow</button>
           </div>
         </div>
       </div>
