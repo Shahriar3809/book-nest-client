@@ -61,7 +61,7 @@ const Details = () => {
           </div>
           <div className="flex text-xl font-bold justify-around">
             <p className="bg-green-500 rounded-md p-2 px-4">
-              Quantity: {quantity} $
+              Quantity: {quantity} 
             </p>
             <p className="bg-green-500 px-4 rounded-md p-2">
               Category Name: {category_name}
