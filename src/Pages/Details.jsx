@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { FaRegStar } from "react-icons/fa";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
 // import { toast } from "react-toastify";
 // import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 
 const Details = () => {
@@ -23,7 +24,7 @@ const Details = () => {
       category_name,
     } = data;
     
-    const {email} = user;
+    const {email, displayName} = user;
 
     const handleBorrowed = () => {
         const borrowedBook = { bookName,
@@ -32,22 +33,54 @@ const Details = () => {
       author,
       quantity,
       description,
-      category_name,bookId, email, isBorrowed: true }
-        console.log(borrowedBook)
+      category_name,bookId, email,displayName, isBorrowed: true }
+      const borrowedDate = new Date().toLocaleDateString();
+     
 
-        axios.post("http://localhost:5000/borrowed", borrowedBook)
-        .then(res=> {
-            if(res.data.insertedId) {
-                toast.success('Successfully Borrowed')
-                // navigate('/borrowed-books')
-            }
-            else(
-              toast.error('Already Borrowed')
-            )
-            
-        })
+       
+Swal.fire({
+  title: "Borrow",
+  html:
+    '<label for="returnDate">Return Date:</label>' +
+    '<input id="returnDate" class="swal2-input" type="date" placeholder="Return Date">',
+  focusConfirm: false,
+  showCancelButton: true,
+  confirmButtonText: "Submit",
+  preConfirm: () => {
+    const returnDate = Swal.getPopup().querySelector("#returnDate").value;
+    if (!returnDate) {
+      Swal.showValidationMessage("Return date is required");
+    }
+    return { returnDate: returnDate };
+  },
+}).then((result) => {
+  if (result.isConfirmed) {
+    const returnDate = result.value.returnDate;
+    // Handle submission, e.g., send returnDate to backend
+    console.log("Borrowing with return date:", returnDate);
+     axios
+       .post("http://localhost:5000/borrowed", {
+         ...borrowedBook,
+         returnDate,
+         borrowedDate,
+       })
+       .then((res) => {
+         if (res.data.insertedId) {
+           toast.success("Successfully Borrowed");
+           // navigate('/borrowed-books')
+         } else toast.error("Already Borrowed");
+       });
+    
+  }
+});
+
+
+
+
 
     }
+
+
 
 
 

@@ -87,8 +87,14 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <img src="https://i.ibb.co/4Z6hbhW/public-library.png" alt="" className="w-[40px]" />
-        <Link to='/' className=" ml-3 text-2xl font-bold">Dream Library</Link>
+        <img
+          src="https://i.ibb.co/4Z6hbhW/public-library.png"
+          alt=""
+          className="w-[40px]"
+        />
+        <Link to="/" className=" ml-3 text-2xl font-bold">
+          Dream Library
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -122,6 +128,7 @@ const Navbar = () => {
 
         {user ? (
           <div className=" flex gap-3 justify-center items-center">
+            <p className="font-bold">{user?.displayName}</p>
             <Tooltip id="my-tooltip" />
             <div
               tabIndex={0}
@@ -135,11 +142,7 @@ const Navbar = () => {
                 <img
                   className="w-full h-full"
                   alt="Tailwind CSS Navbar component"
-                  src={
-                    user.photoURL
-                      && user.photoURL
-                      
-                  }
+                  src={user.photoURL && user.photoURL}
                 />
               </div>
             </div>
@@ -159,12 +162,6 @@ const Navbar = () => {
             >
               Login
             </Link>
-            <Link
-              to="/register"
-              className="font-bold rounded-md bg-orange-700  text-white"
-            >
-              Register
-            </Link>
           </div>
         )}
       </div>
@@ -173,24 +170,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-// import { useContext, useEffect, useState } from "react";
-// import { Link, NavLink } from "react-router-dom";
-// import { AuthContext } from "../AuthProviders/AuthProvider";
-// import { Tooltip } from "react-tooltip";
-
-
-// const Navbar = () => {
-
-//   
-//   // console.log(user)
-
-
-
-
-
-
-    
-// };
-

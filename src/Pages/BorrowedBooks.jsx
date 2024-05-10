@@ -1,7 +1,8 @@
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
-import BookCard from "../components/BookCard";
+// import BookCard from "../components/BookCard";
+import BorrowedCard from "../components/BorrowedCard";
 
 const BorrowedBooks = () => {
 
@@ -20,7 +21,7 @@ const BorrowedBooks = () => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {borrowedData && borrowedData.map((book) => (
-          <BookCard key={book._id} book={book}></BookCard>
+          <BorrowedCard key={book._id} book={book}></BorrowedCard>
         ))}
       </div>
     );
