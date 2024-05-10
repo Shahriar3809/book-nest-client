@@ -55,6 +55,11 @@ const BookCard = ({book}) => {
             </p>
           </div>
           <div className="card-actions justify-end">
+            <Link to={`/update/${_id}`}>
+              <button className="btn bg-green-600 text-white">
+                Update
+              </button>
+            </Link>
             <Link to={`/details/${_id}`}>
               <button className="btn bg-green-600 text-white">
                 View Details

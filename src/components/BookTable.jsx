@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-
+import Rating from "./Rating";
 import { Link } from "react-router-dom";
 
 
@@ -11,7 +11,6 @@ const BookTable = ({book}) => {
       author,
       _id,
       quantity,
-     
       category_name,
     } = book;
     return (
@@ -34,10 +33,17 @@ const BookTable = ({book}) => {
           <span className="">{category_name}</span>
         </td>
         <td>{quantity}</td>
-        <td>{rating}</td>
+        <td>
+          <Rating value={rating}></Rating>
+        </td>
         <th>
-          <Link to={`/details/${_id}`}>
+          <Link to={`/update/${_id}`}>
             <button className="btn btn-sm bg-green-600 text-white">
+              Update
+            </button>
+          </Link>
+          <Link to={`/details/${_id}`}>
+            <button className="btn btn-sm bg-green-800 text-white">
               View Details
             </button>
           </Link>

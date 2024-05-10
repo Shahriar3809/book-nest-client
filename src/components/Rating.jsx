@@ -3,7 +3,7 @@
 
 
 const Rating = ({value}) => {
-  console.log(value)
+  // console.log(value)
     return (
       <div>
         <div className="rating">

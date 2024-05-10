@@ -63,11 +63,11 @@ const AllBooks = () => {
                     {/* head */}
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
+                        <th>Photo, Name & Author</th>
+                        <th>Category</th>
+                        <th>Available Quantity</th>
                         <th>Rating</th>
-                        <th>Status</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
