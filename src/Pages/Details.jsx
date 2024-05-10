@@ -18,6 +18,7 @@ const Details = () => {
       rating,
       author,
       quantity,
+      _id: bookId,
       description,
       category_name,
     } = data;
@@ -25,7 +26,13 @@ const Details = () => {
     const {email} = user;
 
     const handleBorrowed = () => {
-        const borrowedBook = { ...data, email }
+        const borrowedBook = { bookName,
+      photoUrl,
+      rating,
+      author,
+      quantity,
+      description,
+      category_name,bookId, email, isBorrowed: true }
         console.log(borrowedBook)
 
         axios.post("http://localhost:5000/borrowed", borrowedBook)
