@@ -16,7 +16,7 @@ const Login = () => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(email, password);
+    // console.log(email, password);
     loginUser(email, password)
       .then((result) => {
         setUser(result.user);
@@ -42,9 +42,10 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     googleLogin()
+      // eslint-disable-next-line no-unused-vars
       .then((result) => {
         //  setUser(result.user);
-        console.log(result.user);
+        // console.log(result.user);
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {

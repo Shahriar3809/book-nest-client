@@ -45,7 +45,6 @@ const router = createBrowserRouter([
             <AllBooks></AllBooks>
           </PrivateRoutes>
         ),
-        
       },
       {
         path: "/borrowed-books",
@@ -67,14 +66,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/category/:name",
-        element: <CategoryPage></CategoryPage>,
+        element: (
+          <PrivateRoutes>
+            <CategoryPage></CategoryPage>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/category/${params.name}`),
       },
       {
         path: "/update/:id",
-        element: <UpdatePage></UpdatePage>,
-        loader: ({ params }) => fetch(`http://localhost:5000/details/${params.id}`),
+        element: (
+          <PrivateRoutes>
+            <UpdatePage></UpdatePage>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/details/${params.id}`),
       },
     ],
   },
