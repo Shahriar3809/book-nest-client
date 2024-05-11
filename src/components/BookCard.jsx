@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 
 import { Link } from "react-router-dom";
-
+import Rating from "react-rating";
+import { FaStar, FaRegStar } from "react-icons/fa";
 
 const BookCard = ({book}) => {
     const {
@@ -41,7 +42,16 @@ const BookCard = ({book}) => {
 
               <p className="flex gap-1">
                 Rating:{" "}
-                <span className="flex gap-1 items-center">{rating}</span>
+                <span className="flex gap-1 items-center">
+                  <Rating
+                    readonly
+                    initialRating={rating}
+                    emptySymbol={
+                      <FaRegStar className="text-xl text-violet-600" />
+                    }
+                    fullSymbol={<FaStar className="text-xl text-violet-600" />}
+                  />
+                </span>
               </p>
             </div>
             <p>

@@ -18,7 +18,7 @@ console.log(rating)
       <div className="border rounded-lg ">
         <div className="flex max-w-md overflow-hidden  rounded-lg shadow-lg ">
           <div className="w-1/2 bg-cover">
-            <img src={photoUrl} alt="" className="h-full w-full" />
+            <img src={photoUrl} alt="" className="h-[200px] w-full" />
           </div>
 
           <div className="w-2/3 p-4 md:p-4">

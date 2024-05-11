@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
-import Rating from "./Rating";
+// import Rating from "./Rating";
+import Rating from "react-rating";
 import { Link } from "react-router-dom";
-
+import { FaStar, FaRegStar } from "react-icons/fa";
 
 const BookTable = ({book, index}) => {
     const {
@@ -36,7 +37,12 @@ const BookTable = ({book, index}) => {
         </td>
         <td>{quantity}</td>
         <td>
-          <Rating value={rating}></Rating>
+          <Rating
+            readonly
+            initialRating={rating}
+            emptySymbol={<FaRegStar className="text-xl text-violet-600" />}
+            fullSymbol={<FaStar className="text-xl text-violet-600" />}
+          />
         </td>
         <td className="flex items-center justify-center gap-2">
           <Link to={`/update/${_id}`}>
