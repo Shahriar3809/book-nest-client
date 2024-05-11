@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import axios from "axios";
 
 const Register = () => {
   const { createUser, setUser, googleLogin } =
@@ -23,9 +24,18 @@ const Register = () => {
   const onSubmit = (data) => {
     const { email, name, photo, password } = data;
     createUser(email, password)
-      .then((res) => {
-        console.log(res.user);
-        setUser(res.user);
+      .then((result) => {
+        // console.log(res.user);
+        setUser(result.user);
+        axios
+          .post(
+            "http://localhost:5000/jwt",
+            { email: result?.user?.email },
+            { withCredentials: true }
+          )
+          .then((res) => {
+            console.log(res.data);
+          });
 
         Swal.fire({
           icon: "success",
@@ -36,7 +46,7 @@ const Register = () => {
 
         navigate(location?.state ? location.state : "/");
         // Update Profile while registration
-        const updatedUser = res.user;
+        const updatedUser = result.user;
         updateProfile(updatedUser, {
           displayName: name,
           photoURL: photo,
@@ -65,6 +75,15 @@ const Register = () => {
       .then((result) => {
         setUser(result.user);
         console.log(result.user);
+        axios
+          .post(
+            "http://localhost:5000/jwt",
+            { email: result?.user?.email },
+            { withCredentials: true }
+          )
+          .then((res) => {
+            console.log(res.data);
+          });
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {

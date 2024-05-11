@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import axios from "axios";
 
 const Login = () => {
   const { loginUser, setUser,  googleLogin } =
@@ -20,6 +21,15 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         setUser(result.user);
+        axios
+          .post(
+            "http://localhost:5000/jwt",
+            { email: result?.user?.email },
+            { withCredentials: true }
+          )
+          .then((res) => {
+            console.log(res.data);
+          });
         navigate(location?.state ? location.state : "/");
         event.target.reset();
         Swal.fire({
@@ -44,8 +54,10 @@ const Login = () => {
     googleLogin()
       // eslint-disable-next-line no-unused-vars
       .then((result) => {
-        //  setUser(result.user);
-        // console.log(result.user);
+        axios.post("http://localhost:5000/jwt", { email: result?.user?.email }, {withCredentials: true})
+        .then(res=> {
+          console.log(res.data)
+        })
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {

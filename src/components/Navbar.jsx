@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 
 const Navbar = () => {
@@ -34,7 +36,11 @@ const Navbar = () => {
     const handleLogOut = () => {
        logOut()
          .then(() => {
-          //  toast.success("Sign Out Successful");
+           toast.success("Sign Out Successful");
+          axios("http://localhost:5000/logout", {withCredentials: true})
+          .then(res=> {
+            console.log(res)
+          })
          })
          .catch((error) => {
            console.log(error.message);

@@ -11,7 +11,7 @@ const AllBooks = () => {
     // console.log(allBook)
 
     useEffect(()=> {
-      axios.get("http://localhost:5000/allBook")
+      axios.get("http://localhost:5000/allBook", {withCredentials: true})
       .then(res=> {
         setOriginalData(res.data)
         setAllBook(res.data)
@@ -130,8 +130,7 @@ const AllBooks = () => {
                       </tr>
                     </thead>
                     <tbody className="bg-violet-100 text-center">
-                      {allBook &&
-                        allBook.map((book, index) => (
+                      {allBook && allBook.map((book, index) => (
                           <BookTable key={book._id} index={index} book={book}></BookTable>
                         ))}
                     </tbody>

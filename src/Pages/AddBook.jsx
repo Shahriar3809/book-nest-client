@@ -1,8 +1,11 @@
 import axios from "axios";
+import { useContext } from "react";
 import { toast } from "react-toastify";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const AddBook = () => {
 
+  const {user} = useContext(AuthContext)
   const handleAddBook = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -14,11 +17,11 @@ const AddBook = () => {
     const quantity = parseInt(form.quantity.value);
     const about = form.about.value;
     const category_name = form.category_name.value;
-    const newBook = {bookName, photoUrl, rating, author, description, quantity, about, category_name}
+    const newBook = {bookName, photoUrl, rating, author, description, quantity, about, category_name, email: user.email}
     console.log(newBook)
     
 
-    axios.post("http://localhost:5000/addBook", newBook)
+    axios.post("http://localhost:5000/addBook", newBook, {withCredentials: true})
     .then(res=> {
       if(res.data.insertedId) {
         toast.success("Book Added Successfully");
