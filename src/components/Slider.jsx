@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Slider = () => {
   
   return (
-    <div className="z-10 rounded-lg mt-5">
+    <div className="z-10">
       <div></div>
 
       <Swiper
@@ -21,11 +21,11 @@ const Slider = () => {
           clickable: true,
         }}
         autoplay={{
-          delay: 4000,
+          delay: 10000,
         }}
       >
         <SwiperSlide>
-          <div className="bg-[linear-gradient(to_top,rgba(00,00,00,0.2),rgba(00,00,00,0.5)),url('https://i.ibb.co/pQNWYjL/pexels-fariphotography-905844.jpg')] rounded-lg text-white flex justify-center h-[60vh] md:h-[70vh] w-full lg:h-[70vh] bg-cover bg-center bg-no-repeat ">
+          <div className="bg-[linear-gradient(to_top,rgba(00,00,00,0.2),rgba(00,00,00,0.5)),url('https://i.ibb.co/d6MNQKM/pexels-suzyhazelwood-1098601.jpg')] text-white flex justify-center h-[500px] md:h-[700px] w-full lg:h-[700px] bg-cover bg-center bg-no-repeat ">
             <div className=" space-y-2 md:space-y-10 p-24 flex flex-col items-center justify-center">
               <h1 className=" ">
                 <p
@@ -36,54 +36,15 @@ const Slider = () => {
                     fontWeight: "normal",
                   }}
                 >
-                  Aesthetic{" "}
-                  <span style={{ color: "orange", fontWeight: "bold" }}>
-                    {/* Style will be inherited from the parent element */}
-                    <Typewriter
-                      words={["Tableware", "Decor", "Decor", "Decor!"]}
-                      loop={50}
-                      cursor
-                      cursorStyle="_"
-                      typeSpeed={70}
-                      deleteSpeed={50}
-                      delaySpeed={1000}
-                      // onLoopDone={handleDone}
-                      // onType={handleType}
-                    />
-                  </span>
-                </p>
-              </h1>
-              <p className=" md:text-2xl text-center">
-                The items are arranged on a wooden surface, casting soft shadows
-                that accentuate textures and designs.
-              </p>
-              <button className="text-xl font-bold bg-orange-700 py-4 px-6 text-white rounded-lg">
-                <Link to="/all-items">View All Items</Link>
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="rounded-lg bg-[linear-gradient(to_top,rgba(00,00,00,0.2),rgba(00,00,00,0.5)),url('https://i.ibb.co/mNwQSwB/pexels-sankyrao90-716107.jpg')]  text-white flex justify-center h-[60vh] md:h-[70vh] w-full lg:h-[70vh] bg-cover bg-center bg-no-repeat ">
-            <div className=" space-y-2 md:space-y-10 p-24 flex flex-col items-center justify-center">
-              <h1 className="text-7xl text-center font-bold ">
-                <p
-                  className="text-5xl md:text-7xl text-center font-bold"
-                  style={{
-                    paddingTop: "5rem",
-                    margin: "auto 0",
-                    fontWeight: "normal",
-                  }}
-                >
-                  Aesthetic{" "}
+                  Multimedia{" "}
                   <span style={{ color: "orange", fontWeight: "bold" }}>
                     {/* Style will be inherited from the parent element */}
                     <Typewriter
                       words={[
-                        "Kaleidoscope",
-                        "Craftsmanship",
-                        "Kaleidoscope",
-                        "Craftsmanship!",
+                        "Resources",
+                        "Resources",
+                        "Resources",
+                        "Resources!",
                       ]}
                       loop={50}
                       cursor
@@ -98,17 +59,18 @@ const Slider = () => {
                 </p>
               </h1>
               <p className=" md:text-2xl text-center">
-                A vibrant display of various-sized bowls, each adorned with
-                intricate patterns and colors.
+                Explore beyond the written word with our multimedia resources,
+                including DVDs, CDs, and digital subscriptions to magazines and
+                newspapers.
               </p>
-              <button className="text-xl font-bold bg-orange-700 py-4 px-6 text-white rounded-lg">
-                <Link to="/all-items">View All Items</Link>
+              <button className="text-base md:text-xl font-bold bg-violet-700 py-2 md:py-4 px-3 md:px-6 text-white rounded-lg">
+                <Link to="/all-books">View All Books</Link>
               </button>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="rounded-lg bg-[linear-gradient(to_top,rgba(00,00,00,0.2),rgba(00,00,00,0.5)),url('https://i.ibb.co/sj3nFsp/pexels-aliciazinn-159984.jpg')]   text-white flex justify-center w-full lg:h-[70vh] h-[60vh] md:h-[70vh] bg-cover bg-center bg-no-repeat ">
+          <div className=" bg-[linear-gradient(to_top,rgba(00,00,00,0.2),rgba(00,00,00,0.5)),url('https://i.ibb.co/fF6dCZM/pexels-maltelu-1848924.jpg')]  text-white flex justify-center h-[500px] md:h-[700px] w-full lg:h-[700px] bg-cover bg-center bg-no-repeat ">
             <div className=" space-y-2 md:space-y-10 p-24 flex flex-col items-center justify-center">
               <h1 className="text-7xl text-center font-bold ">
                 <p
@@ -119,11 +81,11 @@ const Slider = () => {
                     fontWeight: "normal",
                   }}
                 >
-                  Creating{" "}
+                  Quiet{" "}
                   <span style={{ color: "orange", fontWeight: "bold" }}>
                     {/* Style will be inherited from the parent element */}
                     <Typewriter
-                      words={["Art", "Decor", "Craftsmanship", "Decor!"]}
+                      words={["Retreat", "Retreat", "Retreat", "Retreat!"]}
                       loop={50}
                       cursor
                       cursorStyle="_"
@@ -137,17 +99,18 @@ const Slider = () => {
                 </p>
               </h1>
               <p className=" md:text-2xl text-center">
-                An artist, hands covered in paint, skillfully applies black or
-                dark-colored paint to a wooden surface or canvas.
+                Escape the hustle and bustle of daily life and find solace in
+                the serene atmosphere of our library, perfect for quiet study or
+                contemplation.
               </p>
-              <button className="text-xl font-bold bg-orange-700 py-4 px-6 text-white rounded-lg">
-                <Link to="/all-items">View All Items</Link>
+              <button className="text-base md:text-xl font-bold bg-violet-700 py-2 md:py-4 px-3 md:px-6 text-white">
+                <Link to="/all-books">View All Books</Link>
               </button>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="rounded-lg bg-[linear-gradient(to_top,rgba(00,00,00,0.2),rgba(00,00,00,0.5)),url('https://i.ibb.co/YfQLDQh/pexels-digitalbuggu-352899.jpg')]  text-white flex justify-center w-full lg:h-[70vh] h-[60vh] md:h-[70vh] bg-cover bg-center bg-no-repeat ">
+          <div className=" bg-[linear-gradient(to_top,rgba(00,00,00,0.2),rgba(00,00,00,0.5)),url('https://i.ibb.co/z4MVcL0/pexels-atomlaborblog-1090941.jpg')]   text-white flex justify-center h-[500px] md:h-[700px] w-full lg:h-[700px] bg-cover bg-center bg-no-repeat ">
             <div className=" space-y-2 md:space-y-10 p-24 flex flex-col items-center justify-center">
               <h1 className="text-7xl text-center font-bold ">
                 <p
@@ -158,54 +121,15 @@ const Slider = () => {
                     fontWeight: "normal",
                   }}
                 >
-                  Traditional{" "}
-                  <span style={{ color: "orange", fontWeight: "bold" }}>
-                    {/* Style will be inherited from the parent element */}
-                    <Typewriter
-                      words={["Textile", "Artistry", "Decor", "Textile!"]}
-                      loop={50}
-                      cursor
-                      cursorStyle="_"
-                      typeSpeed={70}
-                      deleteSpeed={50}
-                      delaySpeed={1000}
-                      // onLoopDone={handleDone}
-                      // onType={handleType}
-                    />
-                  </span>
-                </p>
-              </h1>
-              <p className=" md:text-2xl text-center">
-                Three teapots, each with its unique pattern and color scheme,
-                add visual diversity to the collection.
-              </p>
-              <button className="text-xl font-bold bg-orange-700 py-4 px-6 text-white rounded-lg">
-                <Link to="/all-items">View All Items</Link>
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="rounded-lg bg-[linear-gradient(to_top,rgba(00,00,00,0.2),rgba(00,00,00,0.5)),url('https://i.ibb.co/X542FCM/victoria-berman-U-ouht-Pg-HH4-unsplash.jpg')]  text-white flex justify-center w-full h-[60vh] md:h-[70vh] lg:h-[70vh] bg-cover bg-center bg-no-repeat ">
-            <div className=" space-y-2 md:space-y-10 p-24 flex flex-col items-center justify-center">
-              <h1 className="text-7xl text-center font-bold ">
-                <p
-                  className="text-5xl md:text-7xl text-center font-bold"
-                  style={{
-                    paddingTop: "5rem",
-                    margin: "auto 0",
-                    fontWeight: "normal",
-                  }}
-                >
-                  A Kaleidoscope of{" "}
+                  Curated{" "}
                   <span style={{ color: "orange", fontWeight: "bold" }}>
                     {/* Style will be inherited from the parent element */}
                     <Typewriter
                       words={[
-                        "Craftsmanship",
-                        "Artistry",
-                        "Craftsmanship",
-                        "Decor!",
+                        "Collections",
+                        "Collections",
+                        "Collections",
+                        "Collections!",
                       ]}
                       loop={50}
                       cursor
@@ -220,11 +144,99 @@ const Slider = () => {
                 </p>
               </h1>
               <p className=" md:text-2xl text-center">
-                A vibrant display of various-sized bowls, each adorned with
-                intricate patterns and colors.
+                Journey through curated collections tailored to your interests,
+                including fiction, non-fiction, history, science, and more.
               </p>
-              <button className="text-xl font-bold bg-orange-700 py-4 px-6 text-white rounded-lg">
-                <Link to="/all-items">View All Items</Link>
+              <button className="text-base md:text-xl font-bold bg-violet-700 py-2 md:py-4 px-3 md:px-6 text-white rounded-lg">
+                <Link to="/all-books">View All Books</Link>
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className=" bg-[linear-gradient(to_top,rgba(00,00,00,0.2),rgba(00,00,00,0.5)),url('https://i.ibb.co/tPffyvW/pexels-pixabay-256541.jpg')]  text-white flex justify-center h-[500px] md:h-[700px] w-full lg:h-[700px] bg-cover bg-center bg-no-repeat ">
+            <div className=" space-y-2 md:space-y-10 p-24 flex flex-col items-center justify-center">
+              <h1 className="text-7xl text-center font-bold ">
+                <p
+                  className="text-5xl md:text-7xl text-center font-bold"
+                  style={{
+                    paddingTop: "5rem",
+                    margin: "auto 0",
+                    fontWeight: "normal",
+                  }}
+                >
+                  Vast{" "}
+                  <span style={{ color: "orange", fontWeight: "bold" }}>
+                    {/* Style will be inherited from the parent element */}
+                    <Typewriter
+                      words={[
+                        "Collection",
+                        "Collection",
+                        "Collection",
+                        "Collection!",
+                      ]}
+                      loop={50}
+                      cursor
+                      cursorStyle="_"
+                      typeSpeed={70}
+                      deleteSpeed={50}
+                      delaySpeed={1000}
+                      // onLoopDone={handleDone}
+                      // onType={handleType}
+                    />
+                  </span>
+                </p>
+              </h1>
+              <p className=" md:text-2xl text-center">
+                Dive into a diverse array of books covering every genre
+                imaginable, from classic literature to contemporary bestsellers.
+              </p>
+              <button className="text-base md:text-xl font-bold bg-violet-700 py-2 md:py-4 px-3 md:px-6 text-white rounded-lg">
+                <Link to="/all-books">View All Books</Link>
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className=" bg-[linear-gradient(to_top,rgba(00,00,00,0.2),rgba(00,00,00,0.5)),url('https://i.ibb.co/nMpMNKS/pexels-tania-3490856.jpg')]  text-white flex justify-center h-[500px] md:h-[700px] w-full lg:h-[700px] bg-cover bg-center bg-no-repeat ">
+            <div className=" space-y-2 md:space-y-10 p-24 flex flex-col items-center justify-center">
+              <h1 className="text-7xl text-center font-bold ">
+                <p
+                  className="text-5xl md:text-7xl text-center font-bold"
+                  style={{
+                    paddingTop: "5rem",
+                    margin: "auto 0",
+                    fontWeight: "normal",
+                  }}
+                >
+                  Digital{" "}
+                  <span style={{ color: "orange", fontWeight: "bold" }}>
+                    {/* Style will be inherited from the parent element */}
+                    <Typewriter
+                      words={[
+                        "Resources",
+                        "Resources",
+                        "Resources",
+                        "Resources!",
+                      ]}
+                      loop={50}
+                      cursor
+                      cursorStyle="_"
+                      typeSpeed={70}
+                      deleteSpeed={50}
+                      delaySpeed={1000}
+                      // onLoopDone={handleDone}
+                      // onType={handleType}
+                    />
+                  </span>
+                </p>
+              </h1>
+              <p className=" md:text-2xl text-center">
+                Access a wealth of online databases, e-books, and audiobooks
+                from anywhere, anytime with our digital library services.
+              </p>
+              <button className="text-base md:text-xl font-bold bg-violet-700 py-2 md:py-4 px-3 md:px-6 text-white rounded-lg">
+                <Link to="/all-books">View All Books</Link>
               </button>
             </div>
           </div>

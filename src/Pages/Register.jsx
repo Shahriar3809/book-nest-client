@@ -170,7 +170,7 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary font-bold text-xl">
+                <button className="btn btn-primary text-white bg-violet-700 font-bold text-xl">
                   Register
                 </button>
               </div>
@@ -179,7 +179,7 @@ const Register = () => {
             <div className=" mx-8 w-full md:mx-0 text-black mt-10 md:gap-0 justify-around mb-5">
               <button
                 onClick={handleGoogleLogin}
-                className="font-bold flex justify-center w-full gap-3 items-center border px-12 py-3 hover:bg-blue-700 hover:text-white rounded-md"
+                className="font-bold flex justify-center w-full gap-3 items-center border px-12 py-3 hover:bg-violet-600 hover:text-white rounded-md"
               >
                 <FaGoogle className="text-xl" />
                 Google

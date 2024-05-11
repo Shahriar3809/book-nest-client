@@ -2,7 +2,7 @@ import { FaFacebook, FaReddit, FaInstagramSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className=" p-10 mt-10 bg-green-700 text-white">
+    <footer className=" p-10 mt-10 bg-violet-700 text-white">
       <div className="footer max-w-[1170px] mx-auto md:p-5">
         <aside>
           <h3 className="text-3xl font-bold">Dream Library</h3>

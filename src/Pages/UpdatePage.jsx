@@ -39,7 +39,15 @@ const UpdatePage = () => {
 
 
     return (
-      <div className="bg-violet-50 rounded-lg mt-5">
+      <div className="bg-violet-100 rounded-lg mt-5">
+        <div>
+          <h1 className="text-xl md:text-4xl font-bold text-center  text-violet-600 underline ">
+            Update Book:
+          </h1>
+          <p className="text-center text-violet-800 py-2">
+            You can update some data here. Remember, updated data should be real.
+          </p>
+        </div>
         <form onSubmit={handleUpdate} className="p-3">
           <div className="flex flex-col md:flex-row md:gap-5 justify-center ">
             <div className=" md:p-5 w-full md:w-1/2">
@@ -117,7 +125,7 @@ const UpdatePage = () => {
           </div>
 
           <input
-            className="btn mt-5 bg-green-600 text-white w-full font-bold text-xl"
+            className="btn mt-5 bg-violet-600 text-white w-full font-bold text-xl"
             type="submit"
             value="Update"
           />

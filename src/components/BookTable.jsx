@@ -3,7 +3,7 @@ import Rating from "./Rating";
 import { Link } from "react-router-dom";
 
 
-const BookTable = ({book}) => {
+const BookTable = ({book, index}) => {
     const {
       bookName,
       photoUrl,
@@ -14,9 +14,10 @@ const BookTable = ({book}) => {
       category_name,
     } = book;
     return (
-      <tr>
+      <tr className="">
+        <td>{index + 1}</td>
         <td>
-          <div className="flex items-center gap-3">
+          <div className="flex  items-center gap-3">
             <div className="avatar">
               <div className="mask mask-squircle w-12 h-12">
                 <img src={photoUrl} />
@@ -36,18 +37,18 @@ const BookTable = ({book}) => {
         <td>
           <Rating value={rating}></Rating>
         </td>
-        <th>
+        <td className="flex items-center justify-center gap-3">
           <Link to={`/update/${_id}`}>
-            <button className="btn btn-sm bg-green-600 text-white">
+            <button className="btn btn-sm bg-violet-500 text-white">
               Update
             </button>
           </Link>
           <Link to={`/details/${_id}`}>
-            <button className="btn btn-sm bg-green-800 text-white">
+            <button className="btn btn-sm bg-violet-800 text-white">
               View Details
             </button>
           </Link>
-        </th>
+        </td>
       </tr>
     );
 };

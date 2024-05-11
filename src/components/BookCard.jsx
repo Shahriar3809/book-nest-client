@@ -56,12 +56,12 @@ const BookCard = ({book}) => {
           </div>
           <div className="card-actions justify-end">
             <Link to={`/update/${_id}`}>
-              <button className="btn bg-green-600 text-white">
+              <button className="btn bg-violet-500 text-white">
                 Update
               </button>
             </Link>
             <Link to={`/details/${_id}`}>
-              <button className="btn bg-green-600 text-white">
+              <button className="btn bg-violet-800 text-white">
                 View Details
               </button>
             </Link>

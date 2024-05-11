@@ -27,7 +27,11 @@ const AddBook = () => {
   };
 
   return (
-    <div className="bg-gray-300 rounded-lg mt-5">
+    <div className="bg-violet-200 p-5 rounded-lg mt-5">
+      <h1 className="text-xl md:text-4xl font-bold text-center  text-violet-600 underline ">
+        Add Book Here:
+      </h1>
+      <p className="text-center text-violet-800 py-2">Wanna add book to our Library? Fill this book info and click Add this Book button </p>
       <form onSubmit={handleAddBook} className="p-3">
         <div className="flex flex-col md:flex-row md:gap-5 justify-center ">
           <div className=" md:p-5 w-full md:w-1/2">
@@ -121,7 +125,6 @@ const AddBook = () => {
               <option>Travel</option>
             </select>
 
-
             <label className="label">
               <span className="label-text text-black">About The Book</span>
             </label>
@@ -136,7 +139,7 @@ const AddBook = () => {
         </div>
 
         <input
-          className="btn mt-5 bg-green-600 text-white w-full font-bold text-xl"
+          className="btn mt-5 bg-violet-600 text-white w-full font-bold text-xl"
           type="submit"
           value="Add This Book"
         />

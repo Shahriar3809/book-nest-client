@@ -106,7 +106,7 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary font-bold text-xl">
+                <button className="btn btn-primary text-white bg-violet-600 font-bold text-xl">
                   Login
                 </button>
               </div>
@@ -115,12 +115,11 @@ const Login = () => {
             <div className="w-full mx-8 gap-3 md:mx-0 text-black mt-10 md:gap-0 justify-around mb-5">
               <button
                 onClick={handleGoogleLogin}
-                className="font-bold flex w-full justify-center gap-3 items-center border px-12 py-3 hover:bg-blue-700 hover:text-white rounded-md"
+                className="font-bold flex w-full justify-center gap-3 items-center border px-12 py-3 hover:bg-violet-600 hover:text-white rounded-md"
               >
-                <FaGoogle className="text-xl" />
-                Google
+                <FaGoogle className="text-xl " />
+                Google Login
               </button>
-              
             </div>
 
             <div className="mt-6">

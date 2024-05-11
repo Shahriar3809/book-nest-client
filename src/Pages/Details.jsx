@@ -92,7 +92,7 @@ Swal.fire({
         </div>
         <div className="md:w-1/2 w-full space-y-5">
           <div>
-            <h1 className="text-5xl text-center md:text-left p-3 md:p-0 font-bold text-green-700">
+            <h1 className="text-5xl text-center md:text-left p-3 md:p-0 font-bold text-violet-700">
               Book Name: {bookName}
             </h1>
             <p className="font-bold my-2 text-2xl  text-black">
@@ -100,10 +100,10 @@ Swal.fire({
             </p>
           </div>
           <div className="flex text-xl font-bold justify-around">
-            <p className="bg-green-500 rounded-md p-2 px-4">
+            <p className="bg-violet-500 text-white rounded-md p-2 px-4">
               Quantity: {quantity} 
             </p>
-            <p className="bg-green-500 px-4 rounded-md p-2">
+            <p className="bg-violet-500 text-white px-4 rounded-md p-2">
               Category Name: {category_name}
             </p>
           </div>
@@ -125,12 +125,12 @@ Swal.fire({
                 {/* {processing_time} */}
               </span>
             </p>
-            <p className="text-xl bg-green-700 text-white text-center font-bold p-2">
+            <p className="text-xl bg-violet-200  font-bold p-2">
               Category: <span className="underline"></span>
             </p>
           </div>
           <div>
-            <button disabled={quantity === 0 ? true: false} onClick={handleBorrowed} className="btn btn-primary ">Borrow</button>
+            <button disabled={quantity === 0 ? true: false} onClick={handleBorrowed} className="btn w-full bg-violet-700 text-white font-bold text-xl ">Borrow</button>
           </div>
         </div>
       </div>

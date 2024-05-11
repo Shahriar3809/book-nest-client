@@ -35,7 +35,7 @@ console.log(rating)
                 {category_name}
               </h1>
               <Link to={`/details/${_id}`}>
-                <button className="btn btn-sm bg-green-600 text-white">
+                <button className="btn btn-sm bg-violet-600 text-white">
                   View Details
                 </button>
               </Link>

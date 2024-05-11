@@ -3,7 +3,7 @@ import BookCard from "../components/BookCard";
 import { useEffect, useState } from "react";
 import BookTable from "../components/BookTable";
 import axios from "axios";
-
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const AllBooks = () => {
     const [originalData, setOriginalData] = useState(null)
@@ -39,27 +39,35 @@ const AllBooks = () => {
    
     return (
       <div>
-        <div className="flex justify-between">
+        <div>
+          <h1 className="text-xl md:text-4xl font-bold text-center pt-5 text-violet-600 underline ">
+            Our All Book Here:
+          </h1>
+          <p className="text-center text-violet-800 py-2">
+            You can view by table and card, also you can filter by available book{" "}
+          </p>
+        </div>
+        <div className="py-3 flex justify-between">
           <div className="dropdown dropdown-right">
             <div
               tabIndex={0}
               role="button"
-              className="bg-green-700 rounded-sm text-xl font-bold text-white p-3 m-1"
+              className="bg-violet-700 rounded-sm flex items-center gap-2 font-bold text-white p-3 m-1"
             >
-              View By
+              <span>View By</span> <FaArrowRight />
             </div>
             <ul
               tabIndex={0}
               className="dropdown-content rounded-sm  z-[1] menu p-2 shadow bg-base-100  w-52"
             >
               <li
-                className="p-1 text-xl rounded-sm  text-center font-bold text-white bg-green-700"
+                className=" text-xl rounded-sm  text-center font-bold text-white bg-violet-500"
                 onClick={handleTableView}
               >
                 <a>Table View</a>
               </li>
               <li
-                className="p-1 text-xl text-center my-1 font-bold text-white bg-green-700"
+                className=" text-xl text-center my-1 font-bold text-white bg-violet-500"
                 onClick={handleCardView}
               >
                 <a>Card View</a>
@@ -71,22 +79,23 @@ const AllBooks = () => {
             <div
               tabIndex={0}
               role="button"
-              className="bg-green-700 rounded-sm text-xl font-bold text-white p-3 m-1"
+              className="bg-violet-700 flex items-center gap-2 rounded-sm  font-bold text-white p-3 m-1"
             >
-              Filter By
+              <FaArrowLeft />
+              <span>Filter By</span>
             </div>
             <ul
               tabIndex={0}
               className="dropdown-content rounded-sm  z-[1] menu p-2 shadow bg-base-100  w-52"
             >
               <li
-                className="p-1 text-xl rounded-sm  text-center font-bold text-white bg-green-700"
+                className="text-xl rounded-sm  text-center font-bold text-white bg-violet-500"
                 onClick={handleAvailableBooks}
               >
                 <a>Available Books</a>
               </li>
               <li
-                className="p-1 text-xl text-center my-1 font-bold text-white bg-green-700"
+                className="text-xl text-center my-1 font-bold text-white bg-violet-500"
                 onClick={handleAllBooks}
               >
                 <a>All Books</a>
@@ -97,10 +106,11 @@ const AllBooks = () => {
 
         <div>
           {view ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {allBook && allBook.map((book) => (
-                <BookCard key={book._id} book={book}></BookCard>
-              ))}
+            <div className="grid grid-cols-1 p-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {allBook &&
+                allBook.map((book) => (
+                  <BookCard key={book._id} book={book}></BookCard>
+                ))}
             </div>
           ) : (
             <div>
@@ -108,19 +118,22 @@ const AllBooks = () => {
                 <div className="overflow-x-auto">
                   <table className="table">
                     {/* head */}
-                    <thead>
+                    <thead className="bg-violet-300 text-center font-bold">
                       <tr>
-                        <th>Photo, Name & Author</th>
-                        <th>Category</th>
-                        <th>Available Quantity</th>
-                        <th>Rating</th>
-                        <th>Action</th>
+
+                        <th className="font-bold text-black text-base">Serial No</th>
+                        <th className="font-bold text-black text-base">Photo, Name & Author</th>
+                        <th className="font-bold text-black text-base">Category</th>
+                        <th className="font-bold text-black text-base">Available Quantity</th>
+                        <th className="font-bold text-black text-base">Rating</th>
+                        <th className="font-bold text-black text-base">Action</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      {allBook && allBook.map((book) => (
-                        <BookTable key={book._id} book={book}></BookTable>
-                      ))}
+                    <tbody className="bg-violet-100 text-center">
+                      {allBook &&
+                        allBook.map((book, index) => (
+                          <BookTable key={book._id} index={index} book={book}></BookTable>
+                        ))}
                     </tbody>
                   </table>
                 </div>
