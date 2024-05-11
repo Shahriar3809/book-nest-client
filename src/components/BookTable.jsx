@@ -13,6 +13,7 @@ const BookTable = ({book, index}) => {
       quantity,
       category_name,
     } = book;
+
     return (
       <tr className="">
         <td>{index + 1}</td>
@@ -37,7 +38,7 @@ const BookTable = ({book, index}) => {
         <td>
           <Rating value={rating}></Rating>
         </td>
-        <td className="flex items-center justify-center gap-3">
+        <td className="flex items-center justify-center gap-2">
           <Link to={`/update/${_id}`}>
             <button className="btn btn-sm bg-violet-500 text-white">
               Update

@@ -38,27 +38,24 @@ const BookCard = ({book}) => {
               <p className="">
                 Category <span className="font-bold ">{category_name}</span>
               </p>
-              <p>
-                About: <span>$ {about}</span>
-              </p>
+
               <p className="flex gap-1">
                 Rating:{" "}
-                <span className="flex gap-1 items-center">
-                  {rating} 
-                </span>
+                <span className="flex gap-1 items-center">{rating}</span>
               </p>
             </div>
+            <p>
+              About: <span>{about}</span>
+            </p>
           </div>
           <div>
             <p className="bg-gray-200 p-2 text-center font-bold mt-3">
-              Category: 
+              Category:
             </p>
           </div>
           <div className="card-actions justify-end">
             <Link to={`/update/${_id}`}>
-              <button className="btn bg-violet-500 text-white">
-                Update
-              </button>
+              <button className="btn bg-violet-500 text-white">Update</button>
             </Link>
             <Link to={`/details/${_id}`}>
               <button className="btn bg-violet-800 text-white">

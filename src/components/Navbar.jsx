@@ -115,8 +115,8 @@ const Navbar = () => {
               role="button"
               data-tooltip-id="my-tooltip"
               data-tooltip-content={user?.displayName}
-              data-tooltip-place="top"
-              className="tooltip e avatar"
+              data-tooltip-place=""
+              className="tooltip avatar"
             >
               <div className="w-8 md:w-10 rounded-full">
                 <img

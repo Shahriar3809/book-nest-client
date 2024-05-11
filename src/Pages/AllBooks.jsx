@@ -11,7 +11,7 @@ const AllBooks = () => {
     // console.log(allBook)
 
     useEffect(()=> {
-      axios.get("http://localhost:5000/allBook", {withCredentials: true})
+      axios.get("https://dream-library-server.vercel.app/allBook", {withCredentials: true})
       .then(res=> {
         setOriginalData(res.data)
         setAllBook(res.data)

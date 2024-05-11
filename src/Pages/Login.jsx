@@ -23,7 +23,7 @@ const Login = () => {
         setUser(result.user);
         axios
           .post(
-            "http://localhost:5000/jwt",
+            "https://dream-library-server.vercel.app/jwt",
             { email: result?.user?.email },
             { withCredentials: true }
           )
@@ -54,7 +54,7 @@ const Login = () => {
     googleLogin()
       // eslint-disable-next-line no-unused-vars
       .then((result) => {
-        axios.post("http://localhost:5000/jwt", { email: result?.user?.email }, {withCredentials: true})
+        axios.post("https://dream-library-server.vercel.app/jwt", { email: result?.user?.email }, {withCredentials: true})
         .then(res=> {
           console.log(res.data)
         })

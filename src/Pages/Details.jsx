@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FaRegStar } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
 // import { toast } from "react-toastify";
@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 const Details = () => {
     const {user} = useContext(AuthContext)
     const data = useLoaderData();
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const {
       bookName,
       photoUrl,
@@ -23,7 +23,7 @@ const Details = () => {
       description,
       category_name,
     } = data;
-    
+    console.log(data)
     const {email, displayName} = user;
 
     const handleBorrowed = () => {
@@ -59,7 +59,7 @@ Swal.fire({
     // Handle submission, e.g., send returnDate to backend
     console.log("Borrowing with return date:", returnDate);
      axios
-       .post("http://localhost:5000/borrowed", {
+       .post("https://dream-library-server.vercel.app/borrowed", {
          ...borrowedBook,
          returnDate,
          borrowedDate,
@@ -67,7 +67,7 @@ Swal.fire({
        .then((res) => {
          if (res.data.insertedId) {
            toast.success("Successfully Borrowed");
-           // navigate('/borrowed-books')
+           navigate('/borrowed-books')
          } else toast.error("Already Borrowed");
        });
     
@@ -88,7 +88,7 @@ Swal.fire({
     return (
       <div className="flex flex-col md:flex-row gap-8 p-5 bg-gray-100 rounded-lg mt-5">
         <div className="md:w-1/2 w-full">
-          <img className="w-full rounded-lg h-full" src={photoUrl} alt="" />
+          <img className="w-full rounded-lg h-[600px]" src={photoUrl} alt="" />
         </div>
         <div className="md:w-1/2 w-full space-y-5">
           <div>

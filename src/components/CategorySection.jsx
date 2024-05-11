@@ -9,7 +9,7 @@ const CategorySection = () => {
     const [categoryData, setCategoryData] = useState([]);
 
     useEffect(()=> {
-        axios.get("http://localhost:5000/category")
+        axios.get("https://dream-library-server.vercel.app/category")
         .then(res=> {
             setCategoryData(res.data)
         })
