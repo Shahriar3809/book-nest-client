@@ -14,16 +14,16 @@ const Footer = () => {
         </aside>
         <nav className="text-center">
           <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Books</a>
-          <a className="link link-hover">Travel</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <a className="link link-hover">Borrow</a>
+          <a className="link link-hover">Return</a>
+          <a className="link link-hover">Membership</a>
+          <a className="link link-hover">Free</a>
         </nav>
         <nav>
-          <h6 className="footer-title">Company</h6>
+          <h6 className="footer-title">School</h6>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
+          <a className="link link-hover">Other</a>
         </nav>
         <nav>
           <h6 className="footer-title">Legal</h6>
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         <p className="text-center pt-5">
           {" "}
-          Ⓒ All right reserved to Dream Art And Craft- 2024
+          Ⓒ All right reserved to Dream Library- 2024
         </p>
       </div>
     </footer>

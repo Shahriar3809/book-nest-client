@@ -98,9 +98,7 @@ const Register = () => {
               src="https://i.ibb.co/1fcMRXr/Asset-1-2x.png"
               alt=""
             />
-            <h1 className="text-5xl text-center text-black font-bold">
-              Register now!
-            </h1>
+            
             <p className="py-6 text-center"></p>
           </div>
           <div className=" md:w-1/2 md:p-10 text-white ">
