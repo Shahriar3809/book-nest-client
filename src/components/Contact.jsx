@@ -13,14 +13,14 @@ const Contact = () => {
       >
         <div className="bg-violet-600 rounded-lg text-white p-8 flex flex-col  gap-3 items-center">
           <FaLocationDot className="text-4xl" />
-          <h2 className="text-3xl font-bold">Our Address</h2>
+          <h2 className="text-3xl text-center font-bold">Our Address</h2>
           <p className="text-xl text-center font-semibold ">
             99 Fifth Avenue San Francisco
           </p>
         </div>
         <div className=" bg-violet-600 rounded-lg text-white  p-8 flex flex-col gap-3 items-center">
           <IoMdCall className="text-4xl" />
-          <h2 className="text-3xl font-bold">Contact Info</h2>
+          <h2 className="text-3xl text-center font-bold">Contact Info</h2>
           <p className="text-xl font-semibold">+088 (246) 642-123-456</p>
         </div>
         <div className="bg-violet-600 rounded-lg text-white  p-8 flex flex-col gap-3 items-center">

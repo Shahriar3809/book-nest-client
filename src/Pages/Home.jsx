@@ -2,7 +2,7 @@ import CategorySection from "../components/CategorySection";
 import Contact from "../components/Contact";
 import Faq from "../components/Faq";
 import Slider from "../components/Slider";
-// import Map from "../components/Map.jsx";
+
 
 
 const Home = () => {

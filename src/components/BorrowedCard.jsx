@@ -1,13 +1,12 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 
+import PropTypes from "prop-types";
 import axios from "axios";
 import { toast } from "react-toastify";
 
 
 const BorrowedCard = ({ book, handleReturnBook }) => {
   const {
-    // _id,
+
     bookName,
     photoUrl,
     borrowedDate,
@@ -15,7 +14,7 @@ const BorrowedCard = ({ book, handleReturnBook }) => {
     returnDate,
     bookId,
   } = book;
-  // console.log(bookId)
+
 
   const handleReturn = (bookId) => {
     
@@ -57,7 +56,7 @@ const BorrowedCard = ({ book, handleReturnBook }) => {
             </h1>
             <button
               onClick={() => handleReturn(bookId)}
-              className="btn btn-primary bg-violet-200 hover:bg-violet-300 font-bold text-black text-xl "
+              className="btn text-violet-800 btn-primary bg-violet-200 hover:bg-violet-300 font-bold  text-xl "
             >
               Return
             </button>
@@ -68,4 +67,9 @@ const BorrowedCard = ({ book, handleReturnBook }) => {
   );
 };
 
+
+BorrowedCard.propTypes = {
+  book: PropTypes.any,
+  handleReturnBook: PropTypes.func,
+};
 export default BorrowedCard;

@@ -18,6 +18,7 @@ const AddBook = () => {
     const about = form.about.value;
     const category_name = form.category_name.value;
     const newBook = {bookName, photoUrl, rating, author, description, quantity, about, category_name, email: user.email}
+    form.reset();
     console.log(newBook)
     
 

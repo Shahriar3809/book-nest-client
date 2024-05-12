@@ -19,7 +19,7 @@ const AllBooks = () => {
     },[])
 
 
-    const [view, setView] = useState(false)
+    const [view, setView] = useState(true)
 
     const handleTableView = () => {
         setView(false);
@@ -37,6 +37,8 @@ const AllBooks = () => {
     setAllBook(originalData);
   }
    
+
+  
     return (
       <div>
         <div>
@@ -61,13 +63,13 @@ const AllBooks = () => {
               className="dropdown-content rounded-sm  z-[1] menu p-2 shadow bg-base-100  w-52"
             >
               <li
-                className=" text-xl rounded-sm  text-center font-bold text-white bg-violet-500"
+                className=" rounded-sm  text-center font-bold text-white bg-violet-500"
                 onClick={handleTableView}
               >
                 <a>Table View</a>
               </li>
               <li
-                className=" text-xl text-center my-1 font-bold text-white bg-violet-500"
+                className=" text-center my-1 font-bold text-white bg-violet-500"
                 onClick={handleCardView}
               >
                 <a>Card View</a>
@@ -89,16 +91,16 @@ const AllBooks = () => {
               className="dropdown-content rounded-sm  z-[1] menu p-2 shadow bg-base-100  w-52"
             >
               <li
-                className="text-xl rounded-sm  text-center font-bold text-white bg-violet-500"
+                className=" rounded-sm  text-center font-bold text-white bg-violet-500"
                 onClick={handleAvailableBooks}
               >
-                <a>Available Books</a>
+                <a>Show available books</a>
               </li>
               <li
-                className="text-xl text-center my-1 font-bold text-white bg-violet-500"
+                className=" text-center my-1 font-bold text-white bg-violet-500"
                 onClick={handleAllBooks}
               >
-                <a>All Books</a>
+                <a>All books</a>
               </li>
             </ul>
           </div>

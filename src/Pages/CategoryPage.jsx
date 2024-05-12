@@ -1,6 +1,6 @@
 
 import { useLoaderData } from "react-router-dom";
-// import BookCard from "../components/BookCard";
+
 import CategoryBasedCard from "../components/CategoryBasedCard";
 
 
@@ -22,7 +22,7 @@ const CategoryPage = () => {
             Here is category based book. You can explore more category on homepage
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
           {categoryData &&
             categoryData.map((book) => (
               <CategoryBasedCard book={book} key={book._id}></CategoryBasedCard>

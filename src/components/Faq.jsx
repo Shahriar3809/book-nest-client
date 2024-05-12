@@ -18,86 +18,73 @@ const Faq = () => {
           </div>
           <div className="w-full md:w-1/2">
             <div className="pt-10 space-y-2">
-              <div className="collapse collapse-arrow bg-violet-200">
-                <input type="radio" name="my-accordion-2" defaultChecked />
-                <div className="collapse-title text-xl font-medium">
-                  Are your products handmade?
-                </div>
-                <div className="collapse-content">
-                  <p>
-                    Yes, most of our products are handmade by skilled artisans.
-                    We take pride in supporting traditional craftsmanship and
-                    providing unique, high-quality items.
-                  </p>
-                </div>
-              </div>
               
               <div className="collapse collapse-arrow bg-violet-200">
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium">
-                  How can I contact customer support?
+                  How do I borrow books from the library?
                 </div>
                 <div className="collapse-content">
                   <p>
-                    You can reach our customer support team via email at [email
-                    address] or by filling out the contact form on our website.
-                    We strive to respond to all inquiries within 24 hours.
+                    To borrow books, you have to visit our library site and You
+                    can then choose the books you like to borrow and check them.
                   </p>
                 </div>
               </div>
               <div className="collapse collapse-arrow bg-violet-200">
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium">
-                  Do you offer workshops or classes?
+                  How many books can I borrow at a time?
                 </div>
                 <div className="collapse-content">
                   <p>
-                    Yes, we periodically offer workshops and classes where you
-                    can learn various art and craft techniques. Stay tuned to
-                    our website or subscribe to our newsletter for updates on
-                    upcoming events.
+                    You can borrow as much as you can. But You can not borrow
+                    same book twice until return it.
                   </p>
                 </div>
               </div>
               <div className="collapse collapse-arrow bg-violet-200">
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium">
-                  How do I care for my handmade products?
+                  What happens if I return books late?
                 </div>
                 <div className="collapse-content">
                   <p>
-                    Care instructions vary depending on the product. Generally,
-                    we recommend hand washing or spot cleaning for delicate
-                    items and avoiding exposure to direct sunlight or harsh
-                    chemicals. Specific care instructions will be provided with
-                    your purchase.
+                    Late fees may apply for overdue items. The amount of the fee
+                    depends on the type of item and the length of the overdue
+                    period. It is important to return borrowed items on time to
+                    avoid late fees and ensure fair access to library resources
+                    for all members.
                   </p>
                 </div>
               </div>
               <div className="collapse collapse-arrow bg-violet-200">
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium">
-                  Do you offer gift cards?
+                  Can I suggest a book for the library to purchase?
                 </div>
                 <div className="collapse-content">
                   <p>
-                    Yes, we offer gift cards that can be redeemed for purchases
-                    on our website. Gift cards are available in various
-                    denominations and make the perfect gift for any occasion
+                    Absolutely! We welcome suggestions for new books and other
+                    materials to add to our collection. You can submit your
+                    suggestions through our website, or you can speak with our
+                    staff during your visit to the library.
                   </p>
                 </div>
               </div>
               <div className="collapse collapse-arrow bg-violet-200">
                 <input type="radio" name="my-accordion-2" />
                 <div className="collapse-title text-xl font-medium">
-                  What happens if an item I want is out of stock?
+                  Is there a way to donate books to the library?
                 </div>
                 <div className="collapse-content">
                   <p>
-                    If an item you want is out of stock, you can sign up to be
-                    notified when it becomes available again. Alternatively, you
-                    can contact us to inquire about restocking timelines or
-                    possible alternatives.
+                    Yes, we accept book donations that meet our collection
+                    development guidelines. You can drop off donations at the
+                    circulation desk during our operating hours. Please note
+                    that we may not be able to accept all donated items, and any
+                    materials not added to our collection may be sold or
+                    otherwise disposed of at our discretion.
                   </p>
                 </div>
               </div>

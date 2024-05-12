@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { loginUser, setUser,  googleLogin } =
@@ -52,13 +53,14 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     googleLogin()
-      // eslint-disable-next-line no-unused-vars
+     
       .then((result) => {
         axios.post("https://dream-library-server.vercel.app/jwt", { email: result?.user?.email }, {withCredentials: true})
         .then(res=> {
           console.log(res.data)
         })
         navigate(location?.state ? location.state : "/");
+        toast.success('Successfully Sign In')
       })
       .catch((error) => {
         console.log(error);

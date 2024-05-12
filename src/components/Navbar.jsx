@@ -44,7 +44,7 @@ const Navbar = () => {
          })
          .catch((error) => {
            console.log(error.message);
-          //  toast.error("Something went wrong");
+           toast.error("Something went wrong");
          });
     }
 

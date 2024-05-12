@@ -4,9 +4,10 @@ import {  FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 
 import { updateProfile } from "firebase/auth";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser, setUser, googleLogin } =
@@ -36,13 +37,8 @@ const Register = () => {
           .then((res) => {
             console.log(res.data);
           });
-
-        Swal.fire({
-          icon: "success",
-          title: "Wow!",
-          text: "Account created successfully",
-          footer: "",
-        });
+          toast.success("Account created successfully");
+       
 
         navigate(location?.state ? location.state : "/");
         // Update Profile while registration
@@ -59,12 +55,7 @@ const Register = () => {
           });
       })
       .catch((err) => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went Wrong",
-          footer: "",
-        });
+        toast.error("Something went Wrong. Try again.");
         console.log(err);
       });
     console.log(email, name, photo, password);
@@ -85,6 +76,7 @@ const Register = () => {
             console.log(res.data);
           });
         navigate(location?.state ? location.state : "/");
+        toast.success("Sign Up Successful");
       })
       .catch((error) => {
         console.log(error);
@@ -156,7 +148,8 @@ const Register = () => {
                     {...register("password", {
                       required: true,
                       pattern: {
-                        value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
+                        value:
+                          /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>/?]).{6,}$/,
                         message:
                           "Password must be in one uppercase, one lowercase letters and at least 6 character",
                       },
