@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import Rating from "./Rating";
+// import Rating from "./Rating";
+import Rating from "react-rating";
+// import { Link } from "react-router-dom";
+import { FaStar, FaRegStar } from "react-icons/fa";
 
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
@@ -28,7 +31,12 @@ console.log(rating)
               {author}
             </p>
 
-            <Rating value={rating}></Rating>
+            <Rating
+              readonly
+              initialRating={rating}
+              emptySymbol={<FaRegStar className="text-xl text-violet-600" />}
+              fullSymbol={<FaStar className="text-xl text-violet-600" />}
+            />
 
             <div className="flex justify-between mt-3 item-center">
               <h1 className="text-lg font-bold text-gray-700  md:text-xl">
