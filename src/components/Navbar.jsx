@@ -8,7 +8,6 @@ import axios from "axios";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    
   const navLinks = (
     <>
       <li>
@@ -122,7 +121,7 @@ const Navbar = () => {
                 <img
                   className="w-full h-full"
                   alt="Tailwind CSS Navbar component"
-                  src={user.photoURL && user.photoURL}
+                  src={user?.photoURL}
                 />
               </div>
             </div>
