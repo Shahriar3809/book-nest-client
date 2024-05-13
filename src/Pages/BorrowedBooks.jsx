@@ -7,7 +7,7 @@ import BorrowedCard from "../components/BorrowedCard";
 const BorrowedBooks = () => {
 
     const {user} = useContext(AuthContext);
-    const [borrowedData, setBorrowedData] = useState(null);
+    const [borrowedData, setBorrowedData] = useState([]);
     // console.log(borrowedData)
     useEffect(()=> {
         axios.get(`https://dream-library-server.vercel.app/borrowedBooks?email=${user?.email}`, {withCredentials: true})
@@ -15,7 +15,7 @@ const BorrowedBooks = () => {
             // console.log(res.data)
             setBorrowedData(res.data)
         })
-    },[user?.email])
+    },[user.email])
 // console.log(borrowedData)
     const handleReturnBook = (id) => {
       const remaining = borrowedData?.filter(item=> item.bookId !== id)

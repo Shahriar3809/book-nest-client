@@ -19,7 +19,7 @@ const AllBooks = () => {
     },[])
 
 
-    const [view, setView] = useState(true)
+    const [view, setView] = useState(false)
 
     const handleTableView = () => {
         setView(false);
