@@ -19,8 +19,8 @@ const {
 
     return (
       <div className="border rounded-lg ">
-        <div className="flex h-[200px] overflow-hidden  rounded-lg shadow-lg ">
-          <div className="w-1/2  bg-cover">
+        <div className="flex  overflow-hidden  rounded-lg shadow-lg ">
+          <div className="w-1/2 h-[220px] bg-cover">
             <img src={photoUrl} alt="" className="h-full w-full" />
           </div>
 
