@@ -6,15 +6,17 @@ import axios from "axios";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 
 const AllBooks = () => {
-    const [originalData, setOriginalData] = useState(null)
-    const [allBook, setAllBook] = useState(null);
+    const [originalData, setOriginalData] = useState([])
+    const [allBook, setAllBook] = useState([]);
     // console.log(allBook)
 
     useEffect(()=> {
       axios.get("https://dream-library-server.vercel.app/allBook", {withCredentials: true})
       .then(res=> {
-        setOriginalData(res.data)
-        setAllBook(res.data)
+        if(res.data) {
+          setOriginalData(res.data);
+          setAllBook(res.data);
+        }
       })
     },[])
 
@@ -138,7 +140,7 @@ const AllBooks = () => {
                     </tbody>
                   </table>
                 </div>
-                ;
+                
               </div>
             </div>
           )}

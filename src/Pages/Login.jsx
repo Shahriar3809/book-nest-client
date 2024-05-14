@@ -76,14 +76,14 @@ const Login = () => {
       </h1>
       <div className="hero  ">
         <div className="hero-content flex-col-reverse md:flex-row text-white  md:gap-5 lg:flex-row">
-          <div className="text-center md:p-16 md:w-1/2 lg:text-left flex flex-col-reverse">
+          <div className="text-center md:p-2  md:w-1/2 lg:text-left flex flex-col-reverse">
             <img
-              className="p-20 md:p-10"
-              src="https://i.ibb.co/1fcMRXr/Asset-1-2x.png"
+              className="p-5 md:p-5 "
+              src="https://i.ibb.co/f2WhkKt/rsz-220944201-removebg-preview.png"
               alt=""
             />
 
-            <p className="py-6 text-center"></p>
+            
           </div>
           <div className=" md:w-1/2 md:p-10 text-white ">
             <form onSubmit={handleLogin} className="">
@@ -126,7 +126,7 @@ const Login = () => {
               </div>
             </form>
 
-            <div className="w-full mx-8 gap-3 md:mx-0 text-black mt-10 md:gap-0 justify-around mb-5">
+            <div className="w-full gap-3 md:mx-0 text-black mt-10 md:gap-0 justify-around mb-5">
               <button
                 onClick={handleGoogleLogin}
                 className="font-bold flex w-full justify-center gap-3 items-center border px-12 py-3 hover:bg-violet-600 hover:text-white rounded-md"
