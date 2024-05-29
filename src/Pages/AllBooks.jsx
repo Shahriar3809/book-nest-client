@@ -11,12 +11,11 @@ const AllBooks = () => {
     // console.log(allBook)
 
     useEffect(()=> {
-      axios.get("https://dream-library-server.vercel.app/allBook", {withCredentials: true})
+      axios.get("http://localhost:5000/allBook", {withCredentials: true})
       .then(res=> {
-        if(res.data) {
-          setOriginalData(res.data);
-          setAllBook(res.data);
-        }
+        
+        setOriginalData(res.data);
+        setAllBook(res.data);
       })
     },[])
 
@@ -40,6 +39,16 @@ const AllBooks = () => {
   }
    
 
+  const handleSearch = async (event) => {
+    event.preventDefault();
+    const searchText = event.target.search.value;
+    const {data} = await axios.get(`http://localhost:5000/allBook?search=${searchText}`, { withCredentials: true })
+     
+        setOriginalData(data);
+        setAllBook(data);
+        console.log(data)
+    
+  }
   
     return (
       <div>
@@ -48,7 +57,8 @@ const AllBooks = () => {
             Our All Book Here:
           </h1>
           <p className="text-center text-violet-800 py-2">
-            You can view by table and card, also you can filter by available book{" "}
+            You can view by table and card, also you can filter by available
+            book{" "}
           </p>
         </div>
         <div className="py-3 flex justify-between">
@@ -77,6 +87,13 @@ const AllBooks = () => {
                 <a>Card View</a>
               </li>
             </ul>
+          </div>
+
+          <div>
+            <form onSubmit={handleSearch}>
+              <input type="text" name="search" placeholder="Search by Book Name" className="border rounded-md bg-base-200 p-3 mx-5" />
+              <input type="submit" value='Search' className="btn btn-secondary" />
+            </form>
           </div>
 
           <div className="dropdown dropdown-left">
@@ -124,23 +141,38 @@ const AllBooks = () => {
                     {/* head */}
                     <thead className="bg-violet-300 text-center font-bold">
                       <tr>
-
-                        <th className="font-bold text-black text-base">Serial No</th>
-                        <th className="font-bold text-black text-base">Photo, Name & Author</th>
-                        <th className="font-bold text-black text-base">Category</th>
-                        <th className="font-bold text-black text-base">Available Quantity</th>
-                        <th className="font-bold text-black text-base">Rating</th>
-                        <th className="font-bold text-black text-base">Action</th>
+                        <th className="font-bold text-black text-base">
+                          Serial No
+                        </th>
+                        <th className="font-bold text-black text-base">
+                          Photo, Name & Author
+                        </th>
+                        <th className="font-bold text-black text-base">
+                          Category
+                        </th>
+                        <th className="font-bold text-black text-base">
+                          Available Quantity
+                        </th>
+                        <th className="font-bold text-black text-base">
+                          Rating
+                        </th>
+                        <th className="font-bold text-black text-base">
+                          Action
+                        </th>
                       </tr>
                     </thead>
                     <tbody className="bg-violet-100 text-center">
-                      {allBook && allBook.map((book, index) => (
-                          <BookTable key={book._id} index={index} book={book}></BookTable>
+                      {allBook &&
+                        allBook.map((book, index) => (
+                          <BookTable
+                            key={book._id}
+                            index={index}
+                            book={book}
+                          ></BookTable>
                         ))}
                     </tbody>
                   </table>
                 </div>
-                
               </div>
             </div>
           )}

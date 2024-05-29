@@ -30,7 +30,7 @@ const Register = () => {
         setUser(result.user);
         axios
           .post(
-            "https://dream-library-server.vercel.app/jwt",
+            "http://localhost:5000/jwt",
             { email: result?.user?.email },
             { withCredentials: true }
           )
@@ -68,7 +68,7 @@ const Register = () => {
         console.log(result.user);
         axios
           .post(
-            "https://dream-library-server.vercel.app/jwt",
+            "http://localhost:5000/jwt",
             { email: result?.user?.email },
             { withCredentials: true }
           )

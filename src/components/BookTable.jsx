@@ -18,7 +18,7 @@ const BookTable = ({ book, index }) => {
             </div>
           </div>
           <div>
-            <div className="font-bold">Book Name: {bookName}</div>
+            <div className="font-bold">{bookName}</div>
             <div className="text-sm text-left opacity-50">Author: {author}</div>
           </div>
         </div>

@@ -10,12 +10,11 @@ const BorrowedBooks = () => {
     const [borrowedData, setBorrowedData] = useState([]);
     // console.log(borrowedData)
     useEffect(()=> {
-        axios.get(`https://dream-library-server.vercel.app/borrowedBooks?email=${user?.email}`, {withCredentials: true})
+        axios.get(`http://localhost:5000/borrowedBooks?email=${user?.email}`, {withCredentials: true})
         .then(res=> {
-            console.log(res.data)
-            if(!res.data.code) {
-              setBorrowedData(res.data);
-            }
+           
+            // console.log(res)
+            setBorrowedData(res.data);
             // setBorrowedData(borrowedData)
         })
     },[user.email])
@@ -26,7 +25,7 @@ const BorrowedBooks = () => {
       const remaining = borrowedData?.filter(item=> item.bookId !== id)
       setBorrowedData(remaining)
     }
-console.log(borrowedData)
+// console.log(borrowedData)
 
     return (
       <div>

@@ -22,7 +22,7 @@ const AddBook = () => {
     console.log(newBook)
     
 
-    axios.post("https://dream-library-server.vercel.app/addBook", newBook, {withCredentials: true})
+    axios.post("http://localhost:5000/addBook", newBook, {withCredentials: true})
     .then(res=> {
       if(res.data.insertedId) {
         toast.success("Book Added Successfully");

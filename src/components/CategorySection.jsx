@@ -9,7 +9,7 @@ const {loading} = useContext(AuthContext)
     const [categoryData, setCategoryData] = useState([]);
 
     useEffect(()=> {
-        axios.get("https://dream-library-server.vercel.app/category")
+        axios.get("http://localhost:5000/category")
         .then(res=> {
             setCategoryData(res.data)
         })

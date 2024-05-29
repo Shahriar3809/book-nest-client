@@ -22,7 +22,7 @@ const UpdatePage = () => {
         const rating = form.rating.value;
         const category_name = form.category_name.value;
         const updatedData = {bookName: name, photoUrl: photo, rating: rating, author: author, category_name: category_name }
-        axios.put(`https://dream-library-server.vercel.app/update/${_id}`, updatedData)
+        axios.put(`http://localhost:5000/update/${_id}`, updatedData)
         .then(res=> {
             if(res.data.modifiedCount) {
                 toast.success('Successfully Updated.')

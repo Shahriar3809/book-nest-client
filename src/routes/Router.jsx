@@ -62,7 +62,7 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`https://dream-library-server.vercel.app/details/${params.id}`),
+          fetch(`http://localhost:5000/details/${params.id}`),
       },
       {
         path: "/category/:name",
@@ -72,7 +72,7 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`https://dream-library-server.vercel.app/category/${params.name}`),
+          fetch(`http://localhost:5000/category/${params.name}`),
       },
       {
         path: "/update/:id",
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`https://dream-library-server.vercel.app/details/${params.id}`),
+          fetch(`http://localhost:5000/details/${params.id}`),
       },
     ],
   },
