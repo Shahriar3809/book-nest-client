@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import BookTable from "../components/BookTable";
 import axios from "axios";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import Search from "./Search";
 
 const AllBooks = () => {
     const [originalData, setOriginalData] = useState([])
@@ -90,10 +91,7 @@ const AllBooks = () => {
           </div>
 
           <div>
-            <form onSubmit={handleSearch}>
-              <input type="text" name="search" placeholder="Search by Book Name" className="border rounded-md bg-base-200 p-3 mx-5" />
-              <input type="submit" value='Search' className="btn btn-secondary" />
-            </form>
+            <Search handleSearch={handleSearch}></Search>
           </div>
 
           <div className="dropdown dropdown-left">
