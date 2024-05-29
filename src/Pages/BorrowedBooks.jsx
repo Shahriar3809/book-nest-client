@@ -10,7 +10,7 @@ const BorrowedBooks = () => {
     const [borrowedData, setBorrowedData] = useState([]);
     // console.log(borrowedData)
     useEffect(()=> {
-        axios.get(`http://localhost:5000/borrowedBooks?email=${user?.email}`, {withCredentials: true})
+        axios.get(`https://dream-library-server.vercel.app/borrowedBooks?email=${user?.email}`, {withCredentials: true})
         .then(res=> {
            
             // console.log(res)

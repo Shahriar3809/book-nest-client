@@ -36,7 +36,7 @@ const Navbar = () => {
        logOut()
          .then(() => {
            toast.success("Sign Out Successful");
-          axios("http://localhost:5000/logout", {withCredentials: true})
+          axios("https://dream-library-server.vercel.app/logout", {withCredentials: true})
           .then(res=> {
             console.log(res)
           })

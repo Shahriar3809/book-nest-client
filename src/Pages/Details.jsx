@@ -70,7 +70,7 @@ const Details = () => {
         // Handle submission, e.g., send returnDate to backend
         console.log("Borrowing with return date:", returnDate);
         axios
-          .post("http://localhost:5000/borrowed", {
+          .post("https://dream-library-server.vercel.app/borrowed", {
             ...borrowedBook,
             returnDate,
             borrowedDate,

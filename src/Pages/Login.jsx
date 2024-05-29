@@ -24,7 +24,7 @@ const Login = () => {
         setUser(result.user);
         axios
           .post(
-            "http://localhost:5000/jwt",
+            "https://dream-library-server.vercel.app/jwt",
             { email: result?.user?.email },
             { withCredentials: true }
           )
@@ -55,7 +55,7 @@ const Login = () => {
     googleLogin()
      
       .then((result) => {
-        axios.post("http://localhost:5000/jwt", { email: result?.user?.email }, {withCredentials: true})
+        axios.post("https://dream-library-server.vercel.app/jwt", { email: result?.user?.email }, {withCredentials: true})
         .then(res=> {
           console.log(res.data)
         })

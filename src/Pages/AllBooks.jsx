@@ -11,7 +11,7 @@ const AllBooks = () => {
     // console.log(allBook)
 
     useEffect(()=> {
-      axios.get("http://localhost:5000/allBook", {withCredentials: true})
+      axios.get("https://dream-library-server.vercel.app/allBook", {withCredentials: true})
       .then(res=> {
         
         setOriginalData(res.data);
@@ -42,7 +42,7 @@ const AllBooks = () => {
   const handleSearch = async (event) => {
     event.preventDefault();
     const searchText = event.target.search.value;
-    const {data} = await axios.get(`http://localhost:5000/allBook?search=${searchText}`, { withCredentials: true })
+    const {data} = await axios.get(`https://dream-library-server.vercel.app/allBook?search=${searchText}`, { withCredentials: true })
      
         setOriginalData(data);
         setAllBook(data);
