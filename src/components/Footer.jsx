@@ -5,9 +5,9 @@ const Footer = () => {
     <footer className=" p-10 mt-10 bg-violet-700 text-white">
       <div className="footer max-w-[1170px] mx-auto md:p-5">
         <aside>
-          <h3 className="text-3xl font-bold">Dream Library</h3>
+          <h3 className="text-3xl font-bold">Book Nest</h3>
           <p>
-            Dream Library.
+            Book Nest.
             <br />
             Providing reliable service since 2000
           </p>
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         <p className="text-center pt-5">
           {" "}
-          Ⓒ All right reserved to Dream Library- 2024
+          Ⓒ All right reserved to Book Nest- 2024
         </p>
       </div>
     </footer>

@@ -98,7 +98,7 @@ const Navbar = () => {
           className="w-[30px] md:w-[40px]"
         />
         <Link to="/" className=" ml-3 text-base md:text-2xl font-bold">
-          Dream Library
+          Book Nest
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
